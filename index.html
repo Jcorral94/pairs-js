@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cards</title>
+    <script type="module" src="index.js"></script>
+    <style>
+      #cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        padding: 20px;
+        border: 1px solid black;
+        margin: 1px;
+        border-radius: 4px;
+      }
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #feedback {
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Cards</h2>
+    </header>
+    <div id="tries"></div>
+    <main>
+      <div id="feedback"></div>
+      <div id="cards"></div>
+    </main>
+  </body>
+</html>
