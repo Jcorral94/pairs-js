@@ -18,10 +18,20 @@ export default class Cards {
       for (let j = 0; j < countOfMatches; j++) {
         const { value, back, visible } = currentCard;
         const card = new Card(value, back, visible, `${value}_${i}_${j}`);
-        this.addElements(card, card.id);
         this.cards.push(card);
       }
     }
+    this.cards = this.shuffle(this.cards);
+    this.cards.forEach(card => {
+      this.addElements(card, card.id);
+    });
+  }
+  shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const randomIndex = Math.floor(Math.random() * (i + 1));
+      [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
+    }
+    return array;
   }
   static createElement(type, classes = [], id, textContent) {
     const element = document.createElement(type);
